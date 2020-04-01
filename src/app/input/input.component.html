@@ -1,0 +1,32 @@
+<div>
+
+
+
+<mat-card style="margin: 5px; background-color: #ec407a">
+    <mat-card-title>Enter the name of the person and the amount that was paid</mat-card-title>
+    
+    <mat-form-field appearance="fill" style="margin-bottom: 0px;">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" [(ngModel)]="nameStr">
+        
+      </mat-form-field>
+      <p style="color: #880e4f; margin: 0px;" *ngIf="nameValid()">please enter a minimal of 3 letters!</p>
+<br>
+
+<mat-form-field appearance="fill" style="margin-bottom: 0px;">
+    <mat-label>Money</mat-label>
+    <input matInput placeholder="Money" [(ngModel)]="money">
+    
+  </mat-form-field>
+  <p style="color: #880e4f; margin: 0px;" *ngIf="checkNumber()">please enter exactly 2 decimals!</p>
+
+    <br>
+<button *ngIf="checkNumber() || nameValid(); else elseBlock" mat-raised-button style="background-color: #c2185b; margin-right: 10px;" disabled>Add</button>
+<ng-template #elseBlock>
+    <button mat-raised-button style="background-color: #c2185b; margin-right: 10px;" (click)="addClicked()">Add</button>
+</ng-template>
+<button mat-raised-button style="background-color: #c2185b;" (click)="refresh()">Refresh</button>
+</mat-card>
+  
+  </div>
+

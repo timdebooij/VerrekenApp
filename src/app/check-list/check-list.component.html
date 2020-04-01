@@ -1,0 +1,7 @@
+
+<mat-card style="margin: 5px; background-color: #f48fb1">
+    <mat-card-title>Who paid what</mat-card-title>
+    <app-payment *ngFor="let p of list" [payment] = "p"></app-payment>
+    <mat-card-subtitle>Total money paid: {{total | number}} euro</mat-card-subtitle>
+</mat-card>
+

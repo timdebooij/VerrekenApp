@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <span>Payment Calculator</span> 
+      <p style="margin-top: 50px; font-size: 65%; margin-left: 60px;">By Tim de Booij</p>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-input (newPayment)="newPayment($event)" (refreshEmit)="refresh($event)"></app-input>
+<app-check-list [list] = "payments" [total]="total"></app-check-list>
+<app-overview></app-overview>
